@@ -136,3 +136,29 @@ body {
 .contactText h5 {
     color: grey;
 }
+
+.chatRoom {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/mine.jpg);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 100px;
+    row-gap: 10px;
+}
+
+.sentMessages {
+    background-color: #d5f9ba;
+    border-radius: 10px;
+    padding: 20px;
+    align-self: flex-end;
+    width: 40%;
+}
+
+.receivedMessages {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    align-self: flex-start;
+    width: 40%;
+}

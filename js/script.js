@@ -180,6 +180,14 @@ const app = new Vue({
         activeAvatar() {
             let activeUrl = `img/avatar${this.contacts[this.contactIndex].avatar}.jpg`;
             return activeUrl;
+        },
+
+        checkStatus(item) {
+            if (item.status === 'sent') {
+                return 'sentMessages';
+            } else {
+                return 'receivedMessages';
+            }
         }
     }
 })
