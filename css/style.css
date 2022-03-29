@@ -160,7 +160,6 @@ body {
     background-color: #d5f9ba;
     border-radius: 10px;
     padding: 0px 10px;
-    height: 50px;
     align-self: flex-end;
     width: 40%;
 }
@@ -169,7 +168,6 @@ body {
     background-color: white;
     border-radius: 10px;
     padding: 0px 10px;
-    height: 50px;
     align-self: flex-start;
     width: 40%;
 }
@@ -182,8 +180,7 @@ body {
 
 .messageText {
     font-size: 20px;
-    line-height: 45px;
-    margin: 5px 0px;
+    margin: 15px 0px;
 }
 
 .timeText {
@@ -191,4 +188,8 @@ body {
     align-self: flex-end;
     color: grey;
     margin: 5px 0px;
+}
+
+.bg-active {
+    background-color: #e9ebeb;
 }

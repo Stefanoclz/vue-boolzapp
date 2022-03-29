@@ -45,8 +45,10 @@
             </div>
 
             <!-- Inizio div contatti -->
+
             <div class="contattiContainer">
-                <div class="contatti" v-for="(contact, index) in contacts">
+                <div class="contatti" v-for="(contact, index) in contacts" @click="activator(index)"
+                    :class="selected(index)">
                     <div class="leftContatti">
                         <img :src="avatarUrl(contact)" alt="avatar" />
                         <div class="contactText">

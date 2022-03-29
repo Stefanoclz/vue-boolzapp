@@ -191,11 +191,21 @@ const app = new Vue({
             }
         },
 
-        timeFinder(object) {
-            let str = object.date;
+        timeFinder(elem) {
+            let str = elem.date;
             let newStr = str.substring(11, 16);
             this.string = newStr;
             return this.string;
+        },
+
+        activator(i) {
+            this.contactIndex = i;
+        },
+
+        selected(i) {
+            if (this.contactIndex === i) {
+                return 'bg-active';
+            }
         }
     }
 })
