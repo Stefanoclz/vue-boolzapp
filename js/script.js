@@ -206,6 +206,7 @@ const app = new Vue({
             if (this.contactIndex === i) {
                 return 'bg-active';
             }
-        }
+        },
+
     }
 })

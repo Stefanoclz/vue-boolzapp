@@ -53,7 +53,10 @@
                         <img :src="avatarUrl(contact)" alt="avatar" />
                         <div class="contactText">
                             <h3>{{ contact.name }}</h3>
-                            <h5>Ultimo messaggio inviato</h5>
+                            <h5 v-for="(text, pointer) in contacts[index].messages"
+                                v-if="pointer === contacts[index].messages.length - 1">
+                                {{ text.message }}
+                            </h5>
                         </div>
                     </div>
                     <div>
@@ -69,7 +72,9 @@
                     <img :src="activeAvatar()" alt="avatar">
                     <div class="contactText">
                         <h3>{{ contacts[contactIndex].name }}</h3>
-                        <h5>Ultimo messaggio inviato</h5>
+                        <h5 v-for="(text, pointer) in contacts[contactIndex].messages"
+                            v-if="pointer === contacts[contactIndex].messages.length - 1">
+                            {{ text.message }}</h5>
                     </div>
                 </div>
                 <div class="rightMessageHead">
