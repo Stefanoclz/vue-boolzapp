@@ -169,6 +169,7 @@ const app = new Vue({
         ],
 
         contactIndex: 0,
+        string: '',
     },
 
     methods: {
@@ -188,6 +189,13 @@ const app = new Vue({
             } else {
                 return 'receivedMessages';
             }
+        },
+
+        timeFinder(object) {
+            let str = object.date;
+            let newStr = str.substring(11, 16);
+            this.string = newStr;
+            return this.string;
         }
     }
 })

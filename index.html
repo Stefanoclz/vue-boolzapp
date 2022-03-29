@@ -80,8 +80,11 @@
             <!-- Inizio contenitori messaggi -->
 
             <div class="chatRoom">
-                <div v-for="object in contacts[contactIndex].messages" :class="checkStatus(object)">
-                    {{ object.message}}
+                <div class="messageBox" v-for="object in contacts[contactIndex].messages" :class="checkStatus(object)">
+                    <p class="messageText">
+                        {{ object.message}}
+                    </p>
+                    <p class="timeText" :class="timeFinder(object)">{{ string }}</p>
                 </div>
             </div>
 
