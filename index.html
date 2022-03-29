@@ -28,7 +28,17 @@
 
             <!-- Inizio div contatti -->
             <div class="contattiContainer">
-                <div class="contatti">
+                <div class="contatti" v-for="(contact, index) in contacts">
+                    <div class="leftContatti">
+                        <img :src="contact.avatar" alt="avatar" contact.index />
+                        <div class="contactText">
+                            <h3>{{ contact.name }}</h3>
+                            <h5>Ultimo messaggio inviato</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>12:00</h5>
+                    </div>
                 </div>
             </div>
         </div>
