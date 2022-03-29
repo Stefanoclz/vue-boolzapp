@@ -7,7 +7,7 @@ const app = new Vue({
         contacts: [
             {
                 name: 'Michele',
-                avatar: 'img/avatar_1.jpg',
+                avatar: '_1',
                 visible: true,
                 messages: [
                     {
@@ -29,7 +29,7 @@ const app = new Vue({
             },
             {
                 name: 'Fabio',
-                avatar: 'img/avatar_2.jpg',
+                avatar: '_2',
                 visible: true,
                 messages: [
                     {
@@ -51,7 +51,7 @@ const app = new Vue({
             },
             {
                 name: 'Samuele',
-                avatar: 'img/avatar_3.jpg',
+                avatar: '_3',
                 visible: true,
                 messages: [
                     {
@@ -73,7 +73,7 @@ const app = new Vue({
             },
             {
                 name: 'Alessandro B.',
-                avatar: 'img/avatar_4.jpg',
+                avatar: '_4',
                 visible: true,
                 messages: [
                     {
@@ -90,7 +90,7 @@ const app = new Vue({
             },
             {
                 name: 'Alessandro L.',
-                avatar: 'img/avatar_5.jpg',
+                avatar: '_5',
                 visible: true,
                 messages: [
                     {
@@ -107,7 +107,7 @@ const app = new Vue({
             },
             {
                 name: 'Claudia',
-                avatar: 'img/avatar_6.jpg',
+                avatar: '_6',
                 visible: true,
                 messages: [
                     {
@@ -129,7 +129,7 @@ const app = new Vue({
             },
             {
                 name: 'Federico',
-                avatar: 'img/avatar_7.jpg',
+                avatar: '_7',
                 visible: true,
                 messages: [
                     {
@@ -146,7 +146,7 @@ const app = new Vue({
             },
             {
                 name: 'Davide',
-                avatar: 'img/avatar_8.jpg',
+                avatar: '_8',
                 visible: true,
                 messages: [
                     {
@@ -168,10 +168,18 @@ const app = new Vue({
             }
         ],
 
-        contactIndex: undefined,
+        contactIndex: 0,
     },
 
     methods: {
+        avatarUrl(contact) {
+            let url = `img/avatar${contact.avatar}.jpg`;
+            return url;
+        },
 
+        activeAvatar() {
+            let activeUrl = `img/avatar${this.contacts[this.contactIndex].avatar}.jpg`;
+            return activeUrl;
+        }
     }
 })

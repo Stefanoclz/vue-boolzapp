@@ -18,9 +18,27 @@
 
         <div id="users">
 
-            <div class="userHead"></div>
+            <div class="userHead">
+                <div class="leftUserHead">
+                    <img src="img/avatar_io.jpg" alt="mio avatar" />
+                    <h4>Sofia</h4>
+                </div>
+                <div class="rightUserHead">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
 
-            <div class="alertDesktop"></div>
+            <div class="alertDesktop">
+                <div class="mute">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div class="alertText">
+                    <h4>Ricevi notifiche di nuovi messaggi</h4>
+                    <h5>Attiva notifiche desktop</h5>
+                </div>
+            </div>
 
             <div class="searchContainer">
                 <input type="text" placeholder="       &#128269;       Cerca o inizia una nuova chat">
@@ -30,7 +48,7 @@
             <div class="contattiContainer">
                 <div class="contatti" v-for="(contact, index) in contacts">
                     <div class="leftContatti">
-                        <img :src="contact.avatar" alt="avatar" contact.index />
+                        <img :src="avatarUrl(contact)" alt="avatar" />
                         <div class="contactText">
                             <h3>{{ contact.name }}</h3>
                             <h5>Ultimo messaggio inviato</h5>
@@ -44,7 +62,22 @@
         </div>
 
         <div id="messages">
-            <div class="messagesHead"></div>
+            <div class="messagesHead">
+                <div class="leftMessageHead">
+                    <img :src="activeAvatar()" alt="avatar">
+                    <div class="contactText">
+                        <h3>{{ contacts[contactIndex].name }}</h3>
+                        <h5>Ultimo messaggio inviato</h5>
+                    </div>
+                </div>
+                <div class="rightMessageHead">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+
+            <!-- Inizio contenitori messaggi -->
 
         </div>
 
