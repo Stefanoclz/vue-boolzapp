@@ -16,3 +16,57 @@ body {
     background-color: white;
     display: flex;
 }
+
+#users {
+    width: 35%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    width: 65%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.userHead, .messagesHead {
+    height: 8%;
+    background-color: #eaeaea;
+    display: flex;
+}
+
+.alertDesktop {
+    height: 10%;
+    background-color: #8edafc;
+    display: flex;
+}
+
+.searchContainer {
+    height: 4%;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchContainer input {
+    width: 98%;
+    height: 80%;
+    border: none;
+}
+
+.contattiContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contatti {
+    display: flex;
+    height: 10%;
+}
+
