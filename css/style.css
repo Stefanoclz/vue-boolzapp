@@ -193,3 +193,25 @@ body {
 .bg-active {
     background-color: #e9ebeb;
 }
+
+.newMessage {
+    display: flex;
+    height: 80px;
+    background-color: #eaeaea;
+    padding: 10px 30px;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.newMessage input {
+    width: 85%;
+    height: 90%;
+    border: none;
+    padding: 10px;
+    margin: 0 20px;
+}
+
+.newMessage i {
+    font-size: 25px;
+    color: grey;
+}
