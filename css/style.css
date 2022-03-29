@@ -20,7 +20,7 @@ body {
 #users {
     width: 35%;
     height: 100%;
-    border: 1px solid black;
+    
     display: flex;
     flex-direction: column;
 }
@@ -28,9 +28,13 @@ body {
 #messages {
     width: 65%;
     height: 100%;
-    border: 1px solid black;
+    
     display: flex;
     flex-direction: column;
+}
+
+.userHead {
+    border-right: 1px solid lightgrey;
 }
 
 .userHead, .messagesHead {
@@ -93,6 +97,11 @@ body {
     flex-direction: column;
 }
 
+.alertText h5 {
+    color: grey;
+    text-decoration: underline;
+}
+
 .searchContainer {
     height: 4%;
     background-color: #fafafa;
@@ -143,14 +152,14 @@ body {
     background-image: url(../img/mine.jpg);
     display: flex;
     flex-direction: column;
-    padding: 20px 100px;
+    padding: 50px 100px;
     row-gap: 10px;
 }
 
 .sentMessages {
     background-color: #d5f9ba;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     align-self: flex-end;
     width: 40%;
 }
@@ -158,7 +167,7 @@ body {
 .receivedMessages {
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     align-self: flex-start;
     width: 40%;
 }
