@@ -169,7 +169,6 @@ const app = new Vue({
         ],
 
         contactIndex: 0,
-        string: '',
         send: '',
     },
 
@@ -217,8 +216,9 @@ const app = new Vue({
         sendMessage() {
             let time = new Date();
             let today = time.getUTCMonth() + 1 + '/' + time.getUTCDate() + '/' + time.getUTCFullYear();
-            let now = time.getUTCHours() + ':' + time.getUTCMinutes() + ':' + time.getUTCSeconds();
+            let now = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
             let currentTime = today + ' ' + now;
+            console.log(currentTime);
             let newMessage = {
                 date: today + ' ' + now,
                 message: this.send,
@@ -228,6 +228,15 @@ const app = new Vue({
 
 
             this.contacts[this.contactIndex].messages.push(newMessage);
+
+            setTimeout(() => {
+                let responseMessage = {
+                    date: today + ' ' + now,
+                    message: 'Ok!',
+                    status: 'received',
+                }
+                this.contacts[this.contactIndex].messages.push(responseMessage);
+            }, 1000)
 
         }
 
