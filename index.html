@@ -41,14 +41,15 @@
             </div>
 
             <div class="searchContainer">
-                <input type="text" placeholder="       &#128269;       Cerca o inizia una nuova chat">
+                <input type="text" v-model="searchText"
+                    placeholder="       &#128269;       Cerca o inizia una nuova chat" @keyUp="searchContact()">
             </div>
 
             <!-- Inizio div contatti -->
 
             <div class="contattiContainer">
                 <div class="contatti" v-for="(contact, index) in contacts" @click="activator(index)"
-                    :class="selected(index)">
+                    :class="selected(index)" v-show="contact.visible === true">
                     <div class="leftContatti">
                         <img :src="avatarUrl(contact)" alt="avatar" />
                         <div class="contactText">

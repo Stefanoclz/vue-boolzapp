@@ -170,6 +170,7 @@ const app = new Vue({
 
         contactIndex: 0,
         send: '',
+        searchText: '',
     },
 
     methods: {
@@ -239,6 +240,24 @@ const app = new Vue({
             }, 1000)
 
         },
+
+        searchContact() {
+            let verify = this.searchText.toLowerCase();
+            console.log(verify);
+
+            for (let i = 0; i < this.contacts.length; i++) {
+                let checkName = this.contacts[i].name.toLowerCase();
+                if (checkName.includes(verify)) {
+                    this.contacts[i].visible = true;
+                    console.log(this.contacts[i].name + ' ' + this.contacts[i].visible);
+
+                } else if (!checkName.includes(verify)) {
+                    this.contacts[i].visible = false;
+                    console.log(this.contacts[i].name + ' ' + this.contacts[i].visible);
+
+                }
+            }
+        }
 
     }
 })
