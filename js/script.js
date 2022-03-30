@@ -171,6 +171,7 @@ const app = new Vue({
         contactIndex: 0,
         send: '',
         searchText: '',
+        menuActive: undefined,
     },
 
     methods: {
@@ -257,7 +258,21 @@ const app = new Vue({
 
                 }
             }
+        },
+
+        openMenu(i) {
+
+            this.menuActive = i;
+
+        },
+
+        resetMenu() {
+
+            this.menuActive = undefined;
+            console.log(this.menuActive);
+
         }
+
 
     }
 })

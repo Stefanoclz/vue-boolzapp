@@ -41,8 +41,8 @@
             </div>
 
             <div class="searchContainer">
-                <input type="text" v-model="searchText"
-                    placeholder="       &#128269;       Cerca o inizia una nuova chat" @keyUp="searchContact()">
+                <input type="text" v-model="searchText" placeholder="       &#xf002       Cerca o inizia una nuova chat"
+                    @keyUp="searchContact()">
             </div>
 
             <!-- Inizio div contatti -->
@@ -89,11 +89,23 @@
             <!-- Inizio contenitori messaggi -->
 
             <div class="chatRoom">
-                <div class="messageBox" v-for="object in contacts[contactIndex].messages" :class="checkStatus(object)">
+                <div class="messageBox" v-for="(object, index) in contacts[contactIndex].messages"
+                    :class="checkStatus(object)">
                     <p class="messageText">
                         {{ object.message}}
                     </p>
-                    <p class="timeText">{{ timeFinder(object) }}</p>
+                    <div class="timeText">
+                        <div class="menu">
+                            <i @click="openMenu(index)" class="fa-solid fa-chevron-down"></i>
+                            <div v-if="menuActive === index" class="deleteMenu" @mouseleave="resetMenu()">
+                                <div>Message Info</div>
+                                <div class="delete">Delete Message</div>
+                            </div>
+                        </div>
+                        <div>
+                            {{ timeFinder(object) }}
+                        </div>
+                    </div>
                 </div>
             </div>
 
