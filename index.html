@@ -59,8 +59,9 @@
                             </h5>
                         </div>
                     </div>
-                    <div>
-                        <h5>12:00</h5>
+                    <div class="info">
+                        <h5 v-for="(object, indice) in contacts[index].messages"
+                            v-if="indice === contacts[index].messages.length - 1">{{ timeFinder(object) }}</h5>
                     </div>
                 </div>
             </div>

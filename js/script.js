@@ -238,7 +238,7 @@ const app = new Vue({
                 this.contacts[this.contactIndex].messages.push(responseMessage);
             }, 1000)
 
-        }
+        },
 
     }
 })

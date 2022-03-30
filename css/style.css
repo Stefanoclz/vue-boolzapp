@@ -143,7 +143,7 @@ body {
     margin-right: 20px;
 }
 
-.contactText h5 {
+.contactText h5, .info h5 {
     color: grey;
 }
 
