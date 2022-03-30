@@ -170,6 +170,7 @@ const app = new Vue({
 
         contactIndex: 0,
         string: '',
+        send: '',
     },
 
     methods: {
@@ -192,10 +193,15 @@ const app = new Vue({
         },
 
         timeFinder(elem) {
-            let str = elem.date;
+            /*let str = elem.date;
             let newStr = str.substring(11, 16);
             this.string = newStr;
-            return this.string;
+            return this.string;*/
+            let hour = elem.date;
+            let time = hour.split(' ')[1];
+            let splittedTime = time.split(':');
+            let messageTime = splittedTime[0] + ':' + splittedTime[1];
+            return messageTime;
         },
 
         activator(i) {
@@ -207,6 +213,23 @@ const app = new Vue({
                 return 'bg-active';
             }
         },
+
+        sendMessage() {
+            let time = new Date();
+            let today = time.getUTCMonth() + 1 + '/' + time.getUTCDate() + '/' + time.getUTCFullYear();
+            let now = time.getUTCHours() + ':' + time.getUTCMinutes() + ':' + time.getUTCSeconds();
+            let currentTime = today + ' ' + now;
+            let newMessage = {
+                date: today + ' ' + now,
+                message: this.send,
+                status: 'sent',
+            }
+            this.send = '';
+
+
+            this.contacts[this.contactIndex].messages.push(newMessage);
+
+        }
 
     }
 })

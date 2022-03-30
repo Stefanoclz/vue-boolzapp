@@ -91,7 +91,7 @@
                     <p class="messageText">
                         {{ object.message}}
                     </p>
-                    <p class="timeText" :class="timeFinder(object)">{{ string }}</p>
+                    <p class="timeText">{{ timeFinder(object) }}</p>
                 </div>
             </div>
 
@@ -99,7 +99,7 @@
 
             <div class="newMessage">
                 <i class="fa-regular fa-face-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input @keyUp.enter="sendMessage()" v-model="send" type="text" placeholder="Scrivi un messaggio">
                 <i class="fa-solid fa-microphone"></i>
             </div>
 
