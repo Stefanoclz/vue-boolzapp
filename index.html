@@ -99,7 +99,7 @@
                             <i @click="openMenu(index)" class="fa-solid fa-chevron-down"></i>
                             <div v-if="menuActive === index" class="deleteMenu" @mouseleave="resetMenu()">
                                 <div>Message Info</div>
-                                <div class="delete">Delete Message</div>
+                                <div class="delete" @click="removeMessage(index)">Delete Message</div>
                             </div>
                         </div>
                         <div>

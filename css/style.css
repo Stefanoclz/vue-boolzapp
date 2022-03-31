@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 
 body {
     background-color: lightgray;
-    
+
 }
 
 .container {
@@ -21,7 +21,7 @@ body {
 #users {
     width: 35%;
     height: 100%;
-    
+
     display: flex;
     flex-direction: column;
 }
@@ -29,7 +29,7 @@ body {
 #messages {
     width: 65%;
     height: 100%;
-    
+
     display: flex;
     flex-direction: column;
 }
@@ -38,7 +38,8 @@ body {
     border-right: 1px solid lightgrey;
 }
 
-.userHead, .messagesHead {
+.userHead,
+.messagesHead {
     height: 8%;
     background-color: #eaeaea;
     display: flex;
@@ -47,25 +48,29 @@ body {
     align-items: center;
 }
 
-.leftUserHead, .leftMessageHead {
+.leftUserHead,
+.leftMessageHead {
     display: flex;
     align-items: center;
 }
 
-.userHead img, .messagesHead img {
+.userHead img,
+.messagesHead img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
     margin-right: 10px;
 }
 
-.rightUserHead, .rightMessageHead {
+.rightUserHead,
+.rightMessageHead {
     color: #b1b1b1;
     display: flex;
     align-items: center;
 }
 
-.rightUserHead i, .rightMessageHead i {
+.rightUserHead i,
+.rightMessageHead i {
     font-size: 25px;
     margin-right: 20px;
 }
@@ -83,14 +88,14 @@ body {
     border-radius: 50%;
     line-height: 50px;
     width: 50px;
-    height: 50px; 
+    height: 50px;
     text-align: center;
     margin-right: 10px;
 }
 
 .mute i {
     font-size: 20px;
-    color: #8edafc;    
+    color: #8edafc;
 }
 
 .alertText {
@@ -144,7 +149,8 @@ body {
     margin-right: 20px;
 }
 
-.contactText h5, .info h5 {
+.contactText h5,
+.info h5 {
     color: grey;
 }
 
@@ -217,7 +223,7 @@ body {
     flex-direction: column;
     font-size: 20px;
     color: black;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
     position: absolute;
     right: 0;
     top: 10px;
@@ -225,7 +231,7 @@ body {
 }
 
 .deleteMenu div:hover {
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.7);
 }
 
 .delete {
@@ -257,4 +263,3 @@ body {
     font-size: 25px;
     color: grey;
 }
-

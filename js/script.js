@@ -271,6 +271,10 @@ const app = new Vue({
             this.menuActive = undefined;
             console.log(this.menuActive);
 
+        },
+
+        removeMessage(i) {
+            this.contacts[this.contactIndex].messages.splice(i, 1);
         }
 
 
