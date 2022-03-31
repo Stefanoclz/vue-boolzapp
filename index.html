@@ -73,10 +73,10 @@
                 <div class="leftMessageHead">
                     <img :src="activeAvatar()" alt="avatar">
                     <div class="contactText">
-                        <h3>{{ contacts[contactIndex].name }}</h3>
-                        <h5 v-for="(text, pointer) in contacts[contactIndex].messages"
+                        <h4>{{ contacts[contactIndex].name }}</h4>
+                        <h6 v-for="(text, pointer) in contacts[contactIndex].messages"
                             v-if="pointer === contacts[contactIndex].messages.length - 1">
-                            {{ text.message }}</h5>
+                            Ultimo messaggio iviato il: {{ text.date }}</h6>
                     </div>
                 </div>
                 <div class="rightMessageHead">
@@ -98,8 +98,26 @@
                         <div class="menu">
                             <i @click="openMenu(index)" class="fa-solid fa-chevron-down"></i>
                             <div v-if="menuActive === index" class="deleteMenu" @mouseleave="resetMenu()">
-                                <div>Message Info</div>
-                                <div class="delete" @click="removeMessage(index)">Delete Message</div>
+                                <div @click="activatorInfo(index)" @mouseleave="deactiveInfo(index)" class="menuInfo"><i
+                                        class="fa-solid fa-circle-info"></i>Message Info</div>
+                                <div class="delete" @click="removeMessage(index)"><i class="fa-solid fa-trash-can"></i>
+                                    Delete Message</div>
+                                <div v-if="infoIndex === index" class="infoMessage">
+                                    <div>
+                                        <p>inviato il:</p>
+                                        {{ object.date }}
+                                    </div>
+                                    <div>
+                                        <p>contenuto:</p>
+                                        {{ object.message }}
+                                    </div>
+                                    <div>
+                                        <p>
+                                            status:
+                                        </p>
+                                        {{ object.status }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div>

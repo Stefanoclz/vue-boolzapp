@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: lightgray;
-
+    background-image: url(https://external-preview.redd.it/wOza2JuqHftyKiR_CLlPIKHM8bAKffRVWhxOB6l_gZQ.jpg?auto=webp&s=2c510e682cc30b370fc4ba6e8fefcdca2d43387b);
+    background-size: cover;
 }
 
 .container {
@@ -16,6 +16,7 @@ body {
     margin: 3vh auto;
     background-color: white;
     display: flex;
+    border: 5px outset #4d6e97;
 }
 
 #users {
@@ -135,6 +136,7 @@ body {
     justify-content: space-between;
     height: 100%;
     padding: 10px;
+    cursor: pointer;
 }
 
 .leftContatti {
@@ -161,7 +163,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 50px 100px;
-    row-gap: 10px;
+    row-gap: 20px;
     overflow-y: auto;
 }
 
@@ -171,6 +173,7 @@ body {
     padding: 0px 10px;
     align-self: flex-end;
     width: 40%;
+    box-shadow: 5px 5px 8px 3px #888888;
 }
 
 .receivedMessages {
@@ -179,6 +182,7 @@ body {
     padding: 0px 10px;
     align-self: flex-start;
     width: 40%;
+    box-shadow: 5px 5px 8px 3px #888888;
 }
 
 .messageBox {
@@ -211,6 +215,7 @@ body {
 .timeText i {
     font-size: 20px;
     display: none;
+    cursor: pointer;
 }
 
 .messageBox:hover i {
@@ -234,8 +239,42 @@ body {
     background-color: rgba(211, 211, 211, 0.7);
 }
 
+.menuInfo {
+    padding: 5px 0px;
+    display: flex;
+    position: relative;
+}
+
+.infoMessage {
+    background-color: white;
+    width: 200px;
+    position: absolute;
+    right: 0px;
+    top: 70px;
+}
+
+.infoMessage div {
+    font-size: 18px;
+}
+
+.infoMessage p {
+    color: grey;
+}
+
+.infoMessage div:nth-child(2) {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
 .delete {
     border-top: 2px solid grey;
+    display: flex;
+    padding: 5px 0px;
+}
+
+.delete i,
+.menuInfo i {
+    margin: 0px 10px;
 }
 
 .bg-active {

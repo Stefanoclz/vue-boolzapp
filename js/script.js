@@ -172,18 +172,27 @@ const app = new Vue({
         send: '',
         searchText: '',
         menuActive: undefined,
+        infoIndex: undefined
     },
 
     methods: {
+
+        // funzione per definire link degli avatar per ogni contatto
+
         avatarUrl(contact) {
             let url = `img/avatar${contact.avatar}.jpg`;
             return url;
         },
 
+        // // funzione per definire link avatr del contatto evidenziato nella finestra messaggi
+
         activeAvatar() {
             let activeUrl = `img/avatar${this.contacts[this.contactIndex].avatar}.jpg`;
             return activeUrl;
         },
+
+        // funzione per controllare valore della chiave status
+        // e resituire una classe in base ad esso
 
         checkStatus(item) {
             if (item.status === 'sent') {
@@ -192,6 +201,8 @@ const app = new Vue({
                 return 'receivedMessages';
             }
         },
+
+        // funzione per ritornare solo ore e minuti dalla stringa date di ogni oggetto
 
         timeFinder(elem) {
             /*let str = elem.date;
@@ -205,15 +216,23 @@ const app = new Vue({
             return messageTime;
         },
 
+        // funzione per definire quale contatto della lista principale mostrare in primo piano
+
         activator(i) {
             this.contactIndex = i;
         },
+
+        // funzione per aggiungere una classe sul contatto in primo piano
 
         selected(i) {
             if (this.contactIndex === i) {
                 return 'bg-active';
             }
         },
+
+        // funzione per generare una data nel formato consono all'array, 
+        // creare un nuovo oggetto prendendo il valore dall'input,
+        // e inviarlo nell'array dell'oggetto evidenziato per permetterne la stampa a schermo
 
         sendMessage() {
             let time = new Date();
@@ -226,21 +245,26 @@ const app = new Vue({
                 message: this.send,
                 status: 'sent',
             }
+
+            let checkMessage = this.send.trim();
+            if (checkMessage.length > 0) {
+                this.contacts[this.contactIndex].messages.push(newMessage);
+
+                setTimeout(() => {
+                    let responseMessage = {
+                        date: today + ' ' + now,
+                        message: 'Ok!',
+                        status: 'received',
+                    }
+                    this.contacts[this.contactIndex].messages.push(responseMessage);
+                }, 1000)
+            }
+
             this.send = '';
-
-
-            this.contacts[this.contactIndex].messages.push(newMessage);
-
-            setTimeout(() => {
-                let responseMessage = {
-                    date: today + ' ' + now,
-                    message: 'Ok!',
-                    status: 'received',
-                }
-                this.contacts[this.contactIndex].messages.push(responseMessage);
-            }, 1000)
-
         },
+
+        // funzione per ciclare i valori degli oggetti e resistuire
+        // un risultato tramite booleana per ricerca utenti nell' input sinistro
 
         searchContact() {
             let verify = this.searchText.toLowerCase();
@@ -260,21 +284,38 @@ const app = new Vue({
             }
         },
 
+        // funzione per cambiare il valore di un elemento
+        // e permettere l'apertura del menù sui messaggi
+
         openMenu(i) {
-
             this.menuActive = i;
-
         },
+
+        // funzione per resettare valore e chiudere il menù
 
         resetMenu() {
 
             this.menuActive = undefined;
-            console.log(this.menuActive);
 
         },
 
+        // funzione per eliminare un messaggio
+
         removeMessage(i) {
             this.contacts[this.contactIndex].messages.splice(i, 1);
+            this.menuActive = undefined;
+        },
+
+        // funzione per cambiare valore ad un elemento e arprire il menu informazioni
+
+        activatorInfo(i) {
+            this.infoIndex = i;
+        },
+
+        // funzione per resettare e chudere il menù informazioni
+
+        deactiveInfo(index) {
+            this.infoIndex = undefined
         }
 
 
